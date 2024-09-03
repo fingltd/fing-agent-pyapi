@@ -1,8 +1,7 @@
 """Fing Agent API library."""
 
 import httpx
-
-from src.models import ContactResponse, DeviceResponse
+from .models import ContactResponse, DeviceResponse
 
 
 class FingAgent:
