@@ -6,7 +6,7 @@ class DeviceResponse:
 
     def __init__(self, json: dict[str, Any]) -> None:
         """Initialize the Device response object."""
-        self._network_id = str(json.get("networkId"))
+        self._network_id = str(json.get("networkId")) if json.get("networkId") is not None else None
         self._devices = [Device(device_json) for device_json in json["devices"]]
 
     @property
