@@ -1,0 +1,18 @@
+[project]
+name = "fing_agent_api"
+version = "0.0.1"
+authors = [
+  { name="Lorenzo Gasparini", email="lorenzo.gasparini@lansweeper.com" },
+]
+description = "Fing Agent local API library."
+readme = "README.md"
+requires-python = ">=3.11.1"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache 2.0",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/fingltd/fing-agent-pyapi"
+Issues = "https://github.com/fingltd/fing-agent-pyapi/issues"
