@@ -12,7 +12,7 @@
 Here is a complete example of using the library:
 
 ```python
-from fingagent import FingAgent
+from fing_agent_api import FingAgent
 import asyncio
 
 async def main():
