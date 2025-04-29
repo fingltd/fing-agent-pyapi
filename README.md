@@ -23,10 +23,10 @@ async def main():
     devices = await agent.get_devices()
     
     # Get contacts (only available for desktops)
-    # contacts = await agent.get_contacts()
+    contacts = await agent.get_contacts()
     
     # Get agent (only available for fingboxes and agents)
-    # agent_info = await agent.get_agent_info()
+    agent_info = await agent.get_agent_info()
 
 
 if __name__ == "__main__":
