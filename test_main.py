@@ -5,16 +5,14 @@ async def main():
     # Configure the Fing agent
     agent = FingAgent(ip='your_agent_ip', port=49090, key='your_api_key')
     
-    # Get and print devices
+    # Get devices
     devices = await agent.get_devices()
-    print("Devices:", devices)
     
-    # Get and print contacts
+    # Get contacts
     # contacts = await agent.get_contacts()
-    # print("Contacts:", contacts)
-
+    
+    # Get agent
     # agent_info = await agent.get_agent_info()
-    # print("Agent Info:", agent_info)
 
 if __name__ == "__main__":
     asyncio.run(main())
