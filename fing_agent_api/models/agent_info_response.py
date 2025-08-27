@@ -31,7 +31,7 @@ class AgentInfoResponse:
 
         device_type_element = device.find('upnp:deviceType', ns)
         if device_type_element != None:
-            self._device_type = device_type_element.text.removeprefix('urn:fing:')
+            self._device_type = device_type_element.text.removeprefix('urn:fing:').removeprefix('urn:domotz:')
 
         manufacturer_element = device.find('upnp:manufacturer', ns)
         if manufacturer_element != None:
@@ -46,6 +46,8 @@ class AgentInfoResponse:
 
             if stype_element.text.startswith('urn:fing:device:fingagent:mac:'):
                 self._agent_id = stype_element.text.removeprefix('urn:fing:device:fingagent:mac:')
+            elif stype_element.text.startswith('urn:domotz:device:fingbox:mac:'):
+                self._agent_id = stype_element.text.removeprefix('urn:domotz:device:fingbox:mac:')
             elif stype_element.text.find(':active:1') != 0:
                 self._agent_state = 'active'
             elif stype_element.text.find(':inactive:') != 0:
