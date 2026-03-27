@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from typing import Any
+
 
 class ContactInfo:
     """Class representing contact's information."""
@@ -6,6 +9,11 @@ class ContactInfo:
     def __init__(self, json: dict[str, Any]) -> None:
         """Initialize ContactInfo."""
         self._contact_info_json = json
+
+    def _get_str(self, key: str) -> str | None:
+        """Return a string value from the JSON data, or None if missing."""
+        value = self._contact_info_json.get(key)
+        return str(value) if value is not None else None
 
     @property
     def contact_id(self) -> str:
@@ -25,18 +33,10 @@ class ContactInfo:
     @property
     def picture_image_data(self) -> str | None:
         """Return image (Base64 encoded)."""
-        return (
-            str(self._contact_info_json.get("pictureImageData"))
-            if self._contact_info_json.get("pictureImageData") is not None
-            else None
-        )
+        return self._get_str("pictureImageData")
 
     @property
     def picture_url(self) -> str | None:
         """Return picture url."""
-        return (
-            str(self._contact_info_json.get("pictureUrl"))
-            if self._contact_info_json.get("pictureUrl") is not None
-            else None
-        )
+        return self._get_str("pictureUrl")
 
